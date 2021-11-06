@@ -2,10 +2,8 @@
 const getDadJokes = async ()=>{
    const config = {headers: {Accept : 'application/json'}};
    const res = await axios.get("https://icanhazdadjoke.com/",config);
-   let k = document.createElement("li");
-   k.innerText=res.data.joke;
-   document.querySelector('ul').prepend(k);
+   document.querySelector(".lead").innerText=res.data.joke;
 }
 
-const btn = document.querySelector("#get");
+const btn = document.querySelector("#joke");
 btn.addEventListener('click',getDadJokes);
